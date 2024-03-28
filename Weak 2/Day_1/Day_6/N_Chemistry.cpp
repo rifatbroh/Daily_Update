@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n, k;
+        cin >> n >> k;
+        string s;
+        cin >> s;
+        map<char, int> mp;
+        for (int i=0; i<n; i++)
+        {
+            mp[s[i]]++;
+        }
+        int cnt = 0;
+        for (auto i: mp)
+        {
+            if (i.second%2 != 0)
+            {
+                cnt++;
+            }
+        }
+        if (k >= n)
+        {
+            cout << "NO" <<endl;
+        }
+        else if (k >= cnt - 1)
+        {
+            cout << "YES" << endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
+    return 0;
+}
